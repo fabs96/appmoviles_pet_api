@@ -13,9 +13,6 @@ pipeline {
         }
         stage('Build') {
             sh 'docker-compose up -d'
-            sh "IP=$(ip a | grep enp0s3 | grep inet | cut -d'/' -f 1 | cut -d't ' -f 2)"
-            sh "RUNIP=$(echo $IP | cut -d':' -f 1)"
-            sh "echo running on $RUNIP"
         }
     }
 }
