@@ -1,4 +1,4 @@
-FROM NODE:14
+FROM node:14-alpine
 
 COPY ["package.json", "package-lock.json" ,"/usr/src/"]
 
