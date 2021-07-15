@@ -12,11 +12,6 @@ pipeline {
                 sh 'cd appmoviles_pet_api'
             }
         }
-        stage('Clean ejecution') {
-            steps {
-                sh 'docker-compose down 2>>/dev/null'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'docker-compose up -d'
