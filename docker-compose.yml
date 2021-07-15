@@ -8,7 +8,6 @@ services:
     volumes: 
       - .:/usr/src
       - /usr/src/node_modules
-      - /var/run/docker.sock:/var/run/docker.sock
     environment: 
       MONGO_URI: "mongodb://db:27017/mascotaDB"
     depends_on: 
