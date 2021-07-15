@@ -1,21 +1,17 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage('clean workdir') {
+        stage('knowing workspace') {
             steps {
-                sh 'rm -rf appmoviles_pet_api 2>> /dev/null'
+                sh 'pwd'
+                sh 'ls'
             }
         }
-        stage('download repository') {
+        stage('build') {
             steps {
-                sh 'git clone https://github.com/fabs96/appmoviles_pet_api.git'
-                sh 'cd appmoviles_pet_api'
+                sh 'docker-compose -f docker-compose.yml up -d'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
+        
     }
 }
