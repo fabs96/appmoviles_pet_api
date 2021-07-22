@@ -6,8 +6,8 @@ WORKDIR "/usr/src/"
 
 RUN ["npm", "install"]
 
-COPY ["src", "/usr/src/"]
+COPY [".", "/usr/src/"]
 
 EXPOSE 3000
 
-CMD ["npx", "nodemon", "src/index.js"]
+CMD ["node", "src/index.js"]
