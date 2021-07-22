@@ -25,11 +25,13 @@ pipeline {
             }
         }
         stage('Publish') {
-            script {
+            steps {
+                script {
                 docker.withRegistry("", "DockerHubCredentials") {
                     dockerImage.push()
+                    }
                 }
-            }
+            }  
         }
         stage('Validate infraestructure') {
             steps {
