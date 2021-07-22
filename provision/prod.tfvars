@@ -21,4 +21,4 @@ egress_rules = [{
 }    
 ]
 
-private_key="~/.ssh/aws_conn_creds.pem"
+private_key="/home/jenkins/.ssh/aws_conn_creds.pem"
